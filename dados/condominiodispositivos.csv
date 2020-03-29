@@ -1,0 +1,149 @@
+id_sensor;id_condominio;area;andar;unidade
+1;1;piscina;0;
+2;1;festas;0;
+3;1;brinquedoteca;0;
+4;1;academia;0;
+5;1;garagem;0;
+6;1;garagem;0;
+7;1;garagem;0;
+8;1;hall;0;
+9;1;hall;1;1
+10;1;hall;1;2
+11;1;hall;2;1
+12;1;hall;2;2
+13;1;hall;3;1
+14;1;hall;3;2
+15;1;hall;4;1
+16;1;hall;4;2
+17;1;hall;5;1
+18;1;hall;5;2
+19;1;hall;6;1
+20;1;hall;6;2
+21;1;hall;7;1
+22;1;hall;7;2
+23;1;hall;8;1
+24;1;hall;8;2
+25;1;hall;9;1
+26;1;hall;9;2
+27;1;hall;10;1
+28;1;hall;10;2
+29;1;hall;11;1
+30;1;hall;11;2
+31;1;hall;12;1
+32;1;hall;12;2
+33;1;hall;13;1
+34;1;hall;13;2
+35;1;hall;14;1
+36;1;hall;14;2
+37;1;hall;15;1
+38;1;hall;15;2
+39;2;hall bloco 1;1;1
+40;2;hall bloco 1;1;2
+41;2;hall bloco 1;1;3
+42;2;hall bloco 1;1;4
+43;2;hall bloco 1;2;1
+44;2;hall bloco 1;2;2
+45;2;hall bloco 1;2;3
+46;2;hall bloco 1;2;4
+47;2;hall bloco 1;3;1
+48;2;hall bloco 1;3;2
+49;2;hall bloco 1;3;3
+50;2;hall bloco 1;3;4
+51;2;hall bloco 1;4;1
+52;2;hall bloco 1;4;2
+53;2;hall bloco 1;4;3
+54;2;hall bloco 1;4;4
+55;2;hall bloco 1;5;1
+56;2;hall bloco 1;5;2
+57;2;hall bloco 1;5;3
+58;2;hall bloco 1;5;4
+59;2;hall bloco 1;6;1
+60;2;hall bloco 1;6;2
+61;2;hall bloco 1;6;3
+62;2;hall bloco 1;6;4
+63;2;hall bloco 1;7;1
+64;2;hall bloco 1;7;2
+65;2;hall bloco 1;7;3
+66;2;hall bloco 1;7;4
+67;2;hall bloco 1;8;1
+68;2;hall bloco 1;8;2
+69;2;hall bloco 1;8;3
+70;2;hall bloco 1;8;4
+71;2;hall bloco 2;1;1
+72;2;hall bloco 2;1;2
+73;2;hall bloco 2;1;3
+74;2;hall bloco 2;1;4
+75;2;hall bloco 2;2;1
+76;2;hall bloco 2;2;2
+77;2;hall bloco 2;2;3
+78;2;hall bloco 2;2;4
+79;2;hall bloco 2;3;1
+80;2;hall bloco 2;3;2
+81;2;hall bloco 2;3;3
+82;2;hall bloco 2;3;4
+83;2;hall bloco 2;4;1
+84;2;hall bloco 2;4;2
+85;2;hall bloco 2;4;3
+86;2;hall bloco 2;4;4
+87;2;hall bloco 2;5;1
+88;2;hall bloco 2;5;2
+89;2;hall bloco 2;5;3
+90;2;hall bloco 2;5;4
+91;2;hall bloco 2;6;1
+92;2;hall bloco 2;6;2
+93;2;hall bloco 2;6;3
+94;2;hall bloco 2;6;4
+95;2;hall bloco 2;7;1
+96;2;hall bloco 2;7;2
+97;2;hall bloco 2;7;3
+98;2;hall bloco 2;7;4
+99;2;hall bloco 2;8;1
+100;2;hall bloco 2;8;2
+101;2;hall bloco 2;8;3
+102;2;hall bloco 2;8;4
+103;2;festas;0;1
+104;3;hall;0;2
+105;3;hall;1;3
+106;3;hall;1;4
+107;3;hall;1;1
+108;3;hall;1;2
+109;3;hall;2;3
+110;3;hall;2;4
+111;3;hall;2;1
+112;3;hall;2;2
+113;3;hall;3;3
+114;3;hall;3;4
+115;3;hall;3;1
+116;3;hall;3;2
+117;3;hall;4;3
+118;3;hall;4;4
+119;3;hall;4;1
+120;3;hall;4;2
+121;3;hall;5;3
+122;3;hall;5;4
+123;3;hall;5;1
+124;3;hall;5;2
+125;3;hall;6;3
+126;3;hall;6;4
+127;3;hall;6;1
+128;3;hall;6;2
+129;3;hall;7;3
+130;3;hall;7;4
+131;3;hall;7;1
+132;3;hall;7;2
+133;3;hall;8;3
+134;3;hall;8;4
+135;3;hall;8;1
+136;3;hall;8;2
+137;3;hall;9;3
+138;3;hall;9;4
+139;3;hall;9;1
+140;3;hall;9;2
+141;3;hall;10;3
+142;3;hall;10;4
+143;3;hall;10;1
+144;3;hall;10;2
+145;3;hall;11;3
+146;3;hall;11;4
+147;3;hall;11;1
+148;3;hall;11;2

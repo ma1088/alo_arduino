@@ -1,0 +1,9 @@
+id_pessoa;cpf;doc2;tp_doc2;nome;dt_nascimento;mae;pai;email;telefone1;telefone2;funcao
+1;935.069.210-45;11.414.760-7;RG;Samuel Felipe Fernando Fernandes;13/05/1965;Sophia Nicole Juliana Carvalho;M†rcio Emanuel Fernandes;samufernandes@gmail.com;31987564294;3126875688;S°ndico
+2;141.247.730-13;25.652.731-3;RGE;Pietra Malu Sebastiana Porto;04/06/1990;Stefany Brenda da Mota;Manuel Raimundo Lima Porto;pietraporto@bol.com.br;65995432106;2159768420;Zelador
+3;705.784.150-70;34.642.711/0001-81;CNPJ;Daniela Mariane Costa;31/01/1980;F†tima Al°cia Galv∆o;Kaique Gael Costa;daniela.sindica@gmail.com;2144668787;;S°ndico
+4;727.290.930-79;17.072.689-7;RG;Daniel Luan Jesus;17/12/1974;Antonella Fernanda Apar°cio;AndrÇ Gael Cl†udio Silva;luanjesus@yahoo.com.br;1345454874;;Zelador
+5;175.971.580-84;36.964.803-1;RG;Davi Pedro Corte Real;21/02/1990;Elisa Isabel Duarte;Ben°cio Miguel Igor Cardoso;davi.cortereal@uol.com.br;9523547860;1245789562;S°ndico
+6;913.714.050-77;35.913.991-7;RG;Erick F†bio Assis;30/04/2000;Hadassa Cl†udia Daiane Galv∆o;Bryan Raul Galv∆o;erick.assis@uol.com.br;56985631485;1345786230;Subs°ndico
+7;856.280.320-00;39.662.306-2;RG;Tom†s Igor M†rcio Figueiredo;19/10/1986;Andreia Liz Silva;Filipe Caleb Vicente Cavalcanti;tom†s.m†rciofigueiredo@bol.com.br;3265696321;;Zelador
+8;697.863.650-97;23.664.437-3;RG;Yasmin Tereza Rezende;17/07/1989;Alice Lav°nia;Anthony Levi Rezende;yasmin.rezende@uol.com.br;73945861597;;Zelador
