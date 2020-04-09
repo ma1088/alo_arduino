@@ -1,24 +1,25 @@
 //esp8266
-#define esp8266gpio0 6
-#define esp8266gpio2 7
+#define timeout 5500
+#define esp8266gpio0 12
+#define esp8266gpio2 13
 #define esp8266chpd 8
-#define esp8266tx 9
-#define esp8266rx 10
-#define esp8266rst 11
-#define rede "Marilia"
-#define senha "guilherme!"
+#define esp8266tx 6
+#define esp8266rx 5
+#define esp8266rst 7
+String rede = "marilia";
+String senha = "guilherme";
 #include <SoftwareSerial.h>
-SoftwareSerial esp8266(esp8266tx, esp8266rx);
+SoftwareSerial esp8266(esp8266rx, esp8266tx);
 
 //som
-#define sensorSom 5
+#define sensorSom 3
 #define silencio 1
 #define delayfinal 10       //Valor representa um tempo em milissegundos, esse tempo é aguardado pelo programa para que se inicie novamente o loop.
 int numLeitura = 200;         //Valor representa a quantidade de leituras segidas para se determinar o ruído
 
 //métodos
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);//9600);
   
   //som
   pinMode(sensorSom,INPUT);
@@ -34,32 +35,74 @@ void setup() {
   delay(1500);
   esp8266.begin(115200);
   esp8266.setTimeout(5000);
-  while (!esp8266resposta()) {
-    Serial.println("Reset");
-    esp8266.println("AT+RST");
+  boolean atrst = false;
+  boolean at = false;
+  boolean cmd = false;
+  int i = 0;
+  while (!atrst or !at or i < 1) {
+    atrst = esp8266cmd("AT+RST",2000);
+    delay(500);
+    at = esp8266cmd("AT",1000);
+    i += 1;
   }
-  Serial.println("Teste");
-  esp8266.println("AT");
-  if (esp8266resposta()){
-    esp8266.println("AT+GMR");
-    boolean b = esp8266resposta();
-    b = esp8266resposta();
+  cmd = esp8266cmd("AT+GMR",1000);
+  Serial.println ("Iniciou");
+  String conncmd = "AT+CWJAP=" + rede + "," + senha;
+  cmd = esp8266cmd(conncmd,1000);
+  if (cmd) {
+    Serial.println("Conectado!");
+  } else {
+    Serial.println("Tente outra vez");
   }
 }
 
 void loop() {
   int sinal = digitalRead(sensorSom);
   if (sinal < silencio){
-    int soma = 0;
-    for (int i=0; i < numLeitura; i++){
-      sinal = digitalRead(sensorSom);
-      soma = soma + sinal;
+    int db = mede_som();
+    //envia_som
+    if (db > 40) {
+      //envia som
+      //Serial.println(db);
     }
-    double db = 0.361809*soma; //número que cheguei com determinado ajuste do potenciômetro e um app "decibelímetro" para Android.
   }
   delay(delayfinal);
 }
 
+int mede_som(){
+  int soma = 0;
+  for (int i=0; i < numLeitura; i++){
+    int sinal = digitalRead(sensorSom);
+    soma = soma + sinal;
+  }
+  double db = 0.361809*soma; //número que cheguei com determinado ajuste do potenciômetro e um app "decibelímetro" para Android.
+  return db;
+}
+
+boolean esp8266cmd(String comando,int atraso){
+  boolean b = false;
+  Serial.println(comando);
+  esp8266.println(comando);
+  //delay(atraso);
+
+  unsigned long limite = millis() + timeout + atraso;
+  String s = "";
+  while (millis() < limite) {
+    while (esp8266.available()) {
+      char c = esp8266.read();
+      s = s + c;
+    }
+  }
+  if (s.indexOf("OK") > 0) {
+    Serial.println(s + "!");
+    b = true;
+  } else {
+    Serial.println(s + ";");
+  }
+  return b;
+}
+
+//funciona mas não quero usar :P
 boolean esp8266resposta(){
   Serial.println("Resposta: ");
   int limite = 5500;
