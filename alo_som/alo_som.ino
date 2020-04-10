@@ -6,8 +6,8 @@
 #define esp8266tx 6
 #define esp8266rx 5
 #define esp8266rst 7
-String rede = "marilia";
-String senha = "guilherme";
+String rede = "\"marilia\"";
+String senha = "\"guilherme\"";
 #include <SoftwareSerial.h>
 SoftwareSerial esp8266(esp8266rx, esp8266tx);
 
@@ -19,7 +19,7 @@ int numLeitura = 200;         //Valor representa a quantidade de leituras segida
 
 //métodos
 void setup() {
-  Serial.begin(115200);//9600);
+  Serial.begin(115200);
   
   //som
   pinMode(sensorSom,INPUT);
@@ -30,25 +30,20 @@ void setup() {
   digitalWrite(esp8266gpio2,HIGH);
   digitalWrite(esp8266chpd,HIGH);
   digitalWrite(esp8266rst,LOW);
-  delay(1000);
+  delay(2000);
   digitalWrite(esp8266rst,HIGH);
   delay(1500);
   esp8266.begin(115200);
   esp8266.setTimeout(5000);
-  boolean atrst = false;
-  boolean at = false;
   boolean cmd = false;
   int i = 0;
-  while (!atrst or !at or i < 1) {
-    atrst = esp8266cmd("AT+RST",2000);
-    delay(500);
-    at = esp8266cmd("AT",1000);
-    i += 1;
-  }
-  cmd = esp8266cmd("AT+GMR",1000);
-  Serial.println ("Iniciou");
-  String conncmd = "AT+CWJAP=" + rede + "," + senha;
-  cmd = esp8266cmd(conncmd,1000);
+  cmd = esp8266cmd("AT+CWMODE=1",3000); //modo: STA, habilita para conectar-se a redes, mas não é um access point.
+  cmd = esp8266cmd("AT+RST",3000);
+  cmd = esp8266cmd("AT",3000);
+  cmd = esp8266cmd("ATE1",3000); //habilita echo, retornando também o comando enviado
+  cmd = esp8266cmd("AT+GMR",3000); //exibe versão de software
+  cmd = esp8266cmd("AT+CWLAP=" + rede,5000);
+  cmd = esp8266cmd("AT+CWJAP=" + rede + "," + senha,15000);
   if (cmd) {
     Serial.println("Conectado!");
   } else {
@@ -81,9 +76,7 @@ int mede_som(){
 
 boolean esp8266cmd(String comando,int atraso){
   boolean b = false;
-  Serial.println(comando);
   esp8266.println(comando);
-  //delay(atraso);
 
   unsigned long limite = millis() + timeout + atraso;
   String s = "";
@@ -93,12 +86,13 @@ boolean esp8266cmd(String comando,int atraso){
       s = s + c;
     }
   }
-  if (s.indexOf("OK") > 0) {
-    Serial.println(s + "!");
+  if (s.indexOf("OK") > 0 || s.indexOf("ready") > 0) {
     b = true;
   } else {
-    Serial.println(s + ";");
+    b = false;
   }
+  Serial.println(s);
+  Serial.println("resposta: " + s.indexOf("OK"));
   return b;
 }
 
